@@ -236,16 +236,85 @@ if (favouriteNum !== 23) {
 }
 */
 
+// Boolean logic
+
+/*
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+// if(hasGoodVision && hasDriversLicense) {
+//     console.log('Sarah is able to drive');
+// } else {
+//     console.log('Someone else should drive');
+// }
+
+const isTired = false; // C
+
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if(hasGoodVision && hasDriversLicense && !isTired) {
+    console.log('Sarah is able to drive');
+} else {
+    console.log('Someone else should drive...');
+}
+*/
+
+// Switch Statement
+
+const day = 'monday';
+
+switch(day) {
+    case 'monday':
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples');
+        break;
+    case 'friday':
+        console.log('Record videos');
+        break;
+    case 'Saturday':
+    case 'Sunday':
+        console.log('enjoy the weekend :P');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
+
+if(day === 'monday') {
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+    console.log('Prepare theory videos');
+} else if (day === 'wednesday' || day === 'thursday') {
+    console.log('Write code examples');
+} else if (day === 'friday') {
+    console.log('Record videos');
+} else if (day === 'saturday' || day === 'sunday') {
+    console.log('enjoy the weekend :P');
+} else {
+    console.log('Not a valid day!');
+}
+
 ////////////////////////////////
 
 //ass 1 (variables)
 const country = 'Australia';
 const continent = 'Australia';
-let populationInMillions = '27';
+let populationInMillions = '60';
 console.log(country, continent, populationInMillions);
 
 //ass 2 (data types)
-const isIsland = true;
+const isIsland = false;
 let language;
 console.log(isIsland, populationInMillions, country, language);
 
@@ -290,7 +359,34 @@ if (numNeighbours === 1) {
     console.log("No borders");
 }
 
+//ass 8 (Logical operators)
+if(populationInMillions >= 50 && !isIsland) {
+    console.log(`you should live in ${country}!`);
+} else {
+    console.log(`${country} does not meet your criteria :(`);
+}
 
+//ass 9 (Switch statement)
+switch (language) {
+    case 'chinese':
+    case 'mandarin':
+        console.log('MOST number of native speakers');
+        break;
+    case 'spanish':
+        console.log('2nd place in number of native speakers');
+        break;
+    case 'english':
+        console.log('3rd place');
+        break;
+    case 'hindi':
+        console.log('number4');
+        break;
+    case 'arabic':
+        console.log('5th most spoken language');
+        break;
+    default:
+        console.log('great language!');
+}
 ////////////////////////////////
 
 // CODING CHALLENGE #1
@@ -329,7 +425,6 @@ console.log(people[0].bmi, people[1].bmi, checkIfPersonHasHigherBMI(0, 1));
 
 
 // CODING CHALLENGE #2 using code from challenge 1
-
 function checkWhoHasHigherBMI(personAPositionInArray, personBPositionInArray) {
     if (people[personAPositionInArray].bmi > people[personBPositionInArray].bmi) {
         return personAPositionInArray;
@@ -349,3 +444,37 @@ console.log(checkWhoHasHigherBMI(0,1));
 console.log(checkWhoHasLowerBMI(1,0));
 
 console.log(`${people[checkWhoHasHigherBMI(0,1)].firstName}'s BMI (${people[checkWhoHasHigherBMI(0,1)].bmi}) is higher than ${people[checkWhoHasLowerBMI(0,1)].firstName}'s (${people[checkWhoHasLowerBMI(0,1)].bmi})!`);
+
+// CODING CHALLENGE #3 
+const dolphinsScore1 = 91;
+const dolphinsScore2 = 112;
+const dolphinsScore3 = 141;
+
+const koalasScore1 = 101;
+const koalasScore2 = 99;
+const koalasScore3 = 102;
+
+const dolphinsAvgScore = (dolphinsScore1 + dolphinsScore2 + dolphinsScore3) / 3;
+const koalasAvgScore = (koalasScore1 + koalasScore2 + koalasScore3) / 3;
+
+console.log(dolphinsAvgScore, koalasAvgScore);
+
+checkMinimumScore(dolphinsAvgScore, koalasAvgScore);
+
+function checkMinimumScore(team1AvgScore, team2AvgScore) {
+    if(team1AvgScore >= 100 && team2AvgScore >= 100){
+        determineWinner(team1AvgScore, team2AvgScore)
+    } else {
+        console.log("Both teams haven't scored enough!");
+    }
+}
+
+function determineWinner(team1AvgScore, team2AvgScore) {
+    if (dolphinsAvgScore === koalasAvgScore) {
+        console.log("It's is a draw");
+    } else if (dolphinsAvgScore > koalasAvgScore) {
+        console.log("Dolphins win!");
+    } else {
+        console.log("Koalas win!");
+    }  
+}
