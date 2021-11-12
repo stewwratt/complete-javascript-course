@@ -188,6 +188,7 @@ console.log(n);
 
 // 5 falsey values: 0, '', undefined, null, NaN
 
+/*
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean('Josh'));
@@ -207,6 +208,33 @@ if (height) {
 } else {
     console.log('Height is UNDEFINED');
 }
+*/
+
+// Equality operators
+
+/*
+const age = 18;
+if(age === 18) console.log('You just became an adult :D (strict)');
+
+if(age == 18) console.log('You just became an adult :D (loose)')
+
+const favouriteNum = Number(prompt("What's your favourite number"));
+
+console.log(favouriteNum);
+console.log(typeof favouriteNum);
+
+if (favouriteNum === 23) { // 22 === 23 -> FALSE
+    console.log('Cool! 23 is an amazing number');
+} else if (favouriteNum === 7) {
+    console.log('7 is also a cool number');
+} else {
+    console.log('number is not 23 or 7');
+}
+
+if (favouriteNum !== 23) {
+    console.log('why not 23!');
+}
+*/
 
 ////////////////////////////////
 
@@ -250,6 +278,17 @@ if (populationInMillions > 33) {
 '19' - '13' + 17; // 23
 '123' < 57; // false
 5 + 6 + '4' + 9 - 4 - 2; // 1143
+
+//ass 7 (Equality operators)
+const numNeighbours = Number(prompt("How many neighbour countries does your country have?"));
+
+if (numNeighbours === 1) {
+    console.log("Only 1 border!");
+} else if (numNeighbours > 1) {
+    console.log("more than 1 border");
+} else {
+    console.log("No borders");
+}
 
 
 ////////////////////////////////
