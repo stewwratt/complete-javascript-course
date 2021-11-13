@@ -265,6 +265,7 @@ if(hasGoodVision && hasDriversLicense && !isTired) {
 
 // Switch Statement
 
+/*
 const day = 'monday';
 
 switch(day) {
@@ -304,6 +305,43 @@ if(day === 'monday') {
 } else {
     console.log('Not a valid day!');
 }
+*/
+
+// Statements and Expressions
+
+/*
+3 + 4
+1991
+true && false &&!false
+
+if (23 > 10) {
+    const str = '23 is bigger';
+}
+const me = 'josh';
+console.log(`I'm ${2037 - 1991} years old ${me}`);
+*/
+
+// The conditional (ternary) operator
+
+const age = 23;
+age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water');
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink);
+
+let drink2;
+if(age >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'water';
+}
+console.log(drink);
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`)
+
+
+
+
 
 ////////////////////////////////
 
@@ -478,3 +516,10 @@ function determineWinner(team1AvgScore, team2AvgScore) {
         console.log("Koalas win!");
     }  
 }
+
+// CODING CHALLENGE #4
+
+const bill = 430;
+const tip = (bill >= 300 || bill <= 50) ? (bill * 0.2) : (bill * 0.15);
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value was ${bill + tip}`);
