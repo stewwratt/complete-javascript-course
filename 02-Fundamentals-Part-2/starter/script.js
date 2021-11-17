@@ -278,6 +278,7 @@ console.log(neighbours);
 
 // Intro to Objects
 
+/*
 const joshArray = [
     'Jonas',
     'Stewart',
@@ -316,7 +317,75 @@ josh['instagram'] = '@joshstewarthair';
 console.log(`${josh.firstName} has ${josh.friends.length} friends, and his best friend is ${josh.friends[0]}`)
 
 
+// --Objects assignment
 
+const myCountry = {
+    country: 'Australia',
+    capital: 'Canberra',
+    language: 'English',
+    population: 27,
+    neighbours: ['New Zealand', 'Indonesia']
+}
+
+// --Dot and brackets notation assignment
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, 
+${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}`);
+
+myCountry.population += 2;
+console.log(myCountry.population);
+myCountry['population'] -= 2;
+console.log(myCountry['population']);
+
+*/
+
+// Object Methods
+
+/*
+const josh = {
+    firstName: 'Josh',
+    lastName: 'Stewart',
+    birthYear: 1996,
+    job: 'leader',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function () {
+    //     console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
+
+    calcAge: function() {
+        this.age = 2037 - this.birthYear; 
+        return this.age;
+    },
+
+    getSummary: function() {
+        console.log(`${this.firstName} is a ${this.age}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license`);
+    }
+};
+
+console.log(josh.calcAge());
+console.log(josh['calcAge']());
+
+console.log(josh.age);
+console.log(josh.age);
+console.log(josh.age);
+
+console.log(josh.getSummary())
+
+// function noOrA(condition) {
+//     if(condition === true) {
+//         return 'a';
+//     } else {
+//         return 'no';
+//     }
+// }
+
+*/
 
 ///////////////////////////////////////////////////
 
@@ -382,4 +451,39 @@ function calculateTotal(bill, tip) {
 
 console.log(tips);
 console.log(total);
+*/
+
+// Coding Challenge #3
+
+/*
+const mark = {
+    firstName: 'Mark',
+    height: 1.69,
+    mass: 78,
+    calcBmi: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+};
+
+const john = {
+    firstName: 'John',
+    height: 1.88,
+    mass: 10023110,
+    calcBmi: function () {
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi;
+    }
+};
+
+mark.calcBmi();
+john.calcBmi();
+console.log(mark.bmi);
+console.log(john.bmi);
+
+if(mark.bmi > john.bmi) {
+    console.log(`${mark.firstName}'s BMI (${mark.bmi}) is higher than ${john.firstName}'s BMI (${bmi})`)
+} else if (john.bmi > mark.bmi) {
+    console.log(`${john.firstName}'s BMI (${john.bmi}) is higher than ${mark.firstName}'s BMI (${mark.bmi})`)
+}
 */
