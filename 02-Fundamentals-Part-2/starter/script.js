@@ -387,6 +387,147 @@ console.log(josh.getSummary())
 
 */
 
+// Iteration: The For Loop
+
+/*
+// console.log('Lifting weights repetition 1 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 2 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 3 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 4 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 5 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 6 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 7 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 8 🏋🏿‍♀️');
+// console.log('Lifting weights repetition 9 🏋🏿‍♀️');
+
+// for loop keeps running while condition is TRUE
+for(let rep = 1; rep <= 30; rep++) {
+    console.log(`Lifting weights repetition ${rep} 🏋🏿‍♀️`);
+}
+
+// --Iteration: The For Loop assignment
+
+for(let voter = 0; voter <= 50; voter++) {
+    console.log(`Voter number ${voter} is currently voting`);
+}
+*/
+
+// Looping Arrays, Breaking and Continuing
+
+/*
+const josh = [
+    'Josh',
+    'Stewart',
+    25,
+    'Leader',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = [];
+
+for(let i = 0; i < josh.length; i++) {
+    //reading from josh array
+    console.log(josh[i], typeof josh[i]);
+
+    //filling types array
+    // types[i] = typeof josh[i];
+    types.push(typeof josh[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+//  Continue and Break!
+console.log('--- ONLY STRINGS ---')
+for(let i = 0; i < josh.length; i++) {
+    if(typeof josh[i] !== 'string') continue;
+    console.log(josh[i], typeof josh[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---')
+for(let i = 0; i < josh.length; i++) {
+    if(typeof josh[i] === 'number') break;
+    console.log(josh[i], typeof josh[i]);
+}
+
+*/
+
+//Looping backwards and Loops in loops
+
+/*
+const josh = [
+    'Josh',
+    'Stewart',
+    25,
+    'Leader',
+    ['Michael', 'Peter', 'Steven'],
+    true,
+    'one hundred'
+];
+
+// 0, 1, ...., 4
+// 4, 3, ...., 0
+
+for (let i = josh.length - 1; i >= 0; i--) {
+    console.log(i, josh[i]);
+}
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`------ Starting exercise ${exercise}`);
+    for(let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep} 🏋🏿‍♀️`);
+    }
+}
+
+// --Looping back and loops in loops assignment
+
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for(let country = 0; country < listOfNeighbours.length; country++) {
+    for(let neighbour = 0; neighbour < listOfNeighbours[country].length; neighbour++) {
+        if(listOfNeighbours[country].length < 2) continue 
+        let cloneArray = listOfNeighbours.slice();
+        let i = 3;
+
+        cloneArray.splice(i,1);
+
+        console.log(cloneArray.join("---"));
+        console.log(`Neighbour ${listOfNeighbours[country][neighbour]}: ${listOfNeighbours[country]}`);
+    }
+}
+*/
+
+// The While Loop
+
+/*
+let rep = 1;
+while (rep <= 10) {
+    console.log(`Lifting weights repetition ${rep} 🏋🏿‍♀️`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while(dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if(dice === 6) console.log('Loop is about to end...');
+}
+
+// --While loop assignment
+
+*/
+
 ///////////////////////////////////////////////////
 
 // Coding challenge #1
@@ -487,3 +628,99 @@ if(mark.bmi > john.bmi) {
     console.log(`${john.firstName}'s BMI (${john.bmi}) is higher than ${mark.firstName}'s BMI (${mark.bmi})`)
 }
 */
+
+// Coding Challenge #4
+
+/*
+let bills = new Array(10);
+bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+const tips = [];
+const total = [];
+
+cycleThroughBillsForTipAmount();
+cycleThroughBillsForTotalAmount();
+
+function cycleThroughBillsForTipAmount() {
+    for(let i = 0; i < bills.length; i++) {
+        tips.push(calculateTip(bills[i]));
+    }
+}
+
+function cycleThroughBillsForTotalAmount() {
+    if(bills.length === tips.length){
+        for(let i = 0; i < bills.length; i++) {
+            total.push(calculateTotal(bills[i], tips[i]));
+        }
+    } else {
+        consoles.log('Bills and tips are mismatched');
+    }   
+}
+
+function calculateTip(billValue) {
+    if(billValue >= 300 || billValue <= 50){
+        return billValue * 0.2;
+    } else {
+        return billValue * 0.15;    
+    }
+}
+
+function calculateTotal(bill, tip) {
+    return bill + tip;
+}
+
+function calcAverage(arr) {
+    
+}
+
+console.log(tips);
+console.log(total);
+*/
+
+// Coding Challenge #4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+cycleThroughBillsForTipAmount();
+cycleThroughBillsForTotalAmount();
+console.log(tips);
+console.log(totals);
+console.log(`Average total amount: ${calculateAverage(totals)}`);
+
+function cycleThroughBillsForTipAmount() {
+    for(let i = 0; i < bills.length; i++) {
+        tips.push(calculateTip(bills[i]));
+    }
+}
+
+function cycleThroughBillsForTotalAmount() {
+    if(bills.length === tips.length){
+        for(let i = 0; i < bills.length; i++) {
+            totals.push(calculateTotal(bills[i], tips[i]));
+        }
+    } else {
+        consoles.log('Bills and tips are mismatched');
+    }   
+}
+
+function calculateTip(billValue) {
+    if(billValue >= 300 || billValue <= 50){
+        return billValue * 0.2;
+    } else {
+        return billValue * 0.15;    
+    }
+}
+
+function calculateTotal(bill, tip) {
+    return bill + tip;
+}
+
+function calculateAverage(arr) {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        sum += arr[i];
+    }
+    return sum / arr.length;
+}
